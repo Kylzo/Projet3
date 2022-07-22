@@ -6,6 +6,7 @@ let cardsFetch = function () {
       console.log(data);
 
       let productSection = document.getElementById("items");
+      
 
       for (i = 0; i < data.length; i++) {
         const productCard = `
@@ -24,6 +25,7 @@ let cardsFetch = function () {
         `;
         productSection.innerHTML += productCard;
       }
+
     });
 };
 cardsFetch();
