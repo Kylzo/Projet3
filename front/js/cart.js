@@ -3,7 +3,7 @@
 //--------------------
 function getCart() {
   let items = [];
-  if (localStorage.getItem("panier") != null) {
+  if (localStorage.getItem("panier") !== null) {
     items = JSON.parse(localStorage.getItem("panier"));
   }
   return items;
@@ -86,7 +86,6 @@ function validateEmail(mail) {
   if (regexMail.test(mail) == false) {
     return false;
   } else {
-    emailErrorMsg.innerHTML = null;
     return true;
   }
 }
@@ -94,13 +93,12 @@ function validateEmail(mail) {
 //--------------------
 // Prénom
 //--------------------
-const regexName = /^[a-z][a-z '-.,]{1,31}$|^$/i;
+const regexName = /^[a-z][a-z '-.,]{1,31}$|^""$/i;
 const firstNameErrorMsg = document.getElementById("firstNameErrorMsg");
 function validateFirstName(prenom) {
   if (regexName.test(prenom) == false) {
     return false;
   } else {
-    firstNameErrorMsg.innerHTML = null;
     return true;
   }
 }
@@ -113,11 +111,22 @@ function validateLastName(nom) {
   if (regexName.test(nom) == false) {
     return false;
   } else {
-    lastNameErrorMsg.innerHTML = null;
     return true;
   }
 }
 
+//--------------------
+// Adresse
+//--------------------
+const regexAddress = /[a-z]/;
+const addressErrorMsg = document.getElementById("addressErrorMsg");
+function validateAddress(adresse) {
+  if (regexAddress.test(adresse) == false) {
+    return false;
+  } else {
+    return true;
+  }
+}
 //--------------------
 // Ville
 //--------------------
@@ -126,7 +135,6 @@ function validateCity(ville) {
   if (regexName.test(ville) == false) {
     return false;
   } else {
-    cityErrorMsg.innerHTML = null;
     return true;
   }
 }

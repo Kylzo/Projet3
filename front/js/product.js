@@ -70,23 +70,10 @@ toCartBtn.addEventListener("click", () => {
     let color = colorValue();
     add2Cart(id, color, qty);
 
-    if (qty >= 1) {
-        toCartBtn.innerHTML = "Article ajouté !"
-    }
+    if (qty <= 0 || color <= 0)
+        alert("Veuillez sélectionner une couleur et/ou une quantité !")
 
-    if (color >= 1) {
-        toCartBtn.innerHTML = "Article ajouté !"
-    }
-    //-----------------------------
-    // Message erreur si quantité null
-    //-----------------------------
-    if (qty <= 0) {
-        toCartBtn.innerHTML = "Veuillez choisir une quantité !"
-    }
-    //----------------------------
-    // Message erreur si couleur null
-    //----------------------------
-    if (color <= 0) {
-        toCartBtn.innerHTML = "Veuillez choisir une couleur !" 
-    }
+
+    else { alert("Article ajouté au panier") }
+
 });
