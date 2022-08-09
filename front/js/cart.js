@@ -15,7 +15,7 @@ function add2Cart(productId, color, qty) {
   if (qty <= 0 || color == "") {
     return;
   }
-  
+
   let items = getCart();
   if (items.length == 0) {
     items = [[productId, color, qty]];
@@ -24,7 +24,7 @@ function add2Cart(productId, color, qty) {
     for (let i = 0; i < items.length; i++) {
       if (productId === items[i][0] && color === items[i][1]) {
         found = true;
-        items[i][2] += qty;
+        qty += parseInt(items[i][2]);
       }
     }
     if (found == false) {
