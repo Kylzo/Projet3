@@ -24,7 +24,7 @@ function add2Cart(productId, color, qty) {
     for (let i = 0; i < items.length; i++) {
       if (productId === items[i][0] && color === items[i][1]) {
         found = true;
-        qty += parseInt(items[i][2]);
+        qty += parseInt(items[i][1]);
       }
     }
     if (found == false) {
