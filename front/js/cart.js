@@ -57,7 +57,7 @@ function changeQuantity(id, color, qty) {
     if (id === items[i][0] && color === items[i][1]) {
       items[i][2] = qty;
     }
-    localStorage.setItem("panier", JSON.stringify(items[i]));
+    localStorage.setItem("panier", JSON.stringify(items));
     window.location.reload();
   }
 }
