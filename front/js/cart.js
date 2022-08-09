@@ -15,6 +15,7 @@ function add2Cart(productId, color, qty) {
   if (qty <= 0 || color == "") {
     return;
   }
+  
   let items = getCart();
   if (items.length == 0) {
     items = [[productId, color, qty]];
